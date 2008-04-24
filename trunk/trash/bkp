@@ -1,0 +1,73 @@
+<?
+include("auth.php");
+session_start();
+
+// Gestione login
+if ($_GET['action']=="login") {
+   checkUser($_POST['username'],$_POST['password']);
+}
+
+if ($_GET['action']=="logout") {
+   unset($_SESSION['user']);
+}
+
+if ($a=getUser())
+   print "Sono l'utente ".getUser();
+
+?>
+
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+  <title>CarPooling</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+  <script>
+  function script2() {
+     var e = document.getElementById("login");
+     if (e.style.visibility == 'visible') {
+         e.style.visibility = 'hidden';
+         e.style.display = 'none';
+     } else {
+         e.style.visibility = 'visible';
+         e.style.display = 'block';
+     }
+ }
+  </script>
+</head>
+
+<body topmargin="0px">
+
+<!-- Logo e Login -->
+<div id="header">
+  <img id="logo" src="logo.png" />
+    <form id="login" action="<? print $_SERVER['PHP_SELF']; ?>?action=login" method="POST">
+      <label class="ciao">Username<br />
+      <input name="username" class="login" tabindex="1">
+      </label><br />
+      <label class="ciao">Password<br /><input name="password" class="login" tabindex="2"></label>
+      <br /><button type="send" name="invia" class="login">Invia</button>
+    </form>
+</div>
+
+<!-- Barra dei menu -->
+<div id="menu">
+   <!-- MENU -->
+</div>
+
+<div id="body">
+   <!-- CONTENT -->Tragitto 1
+<div class="horRule"></div>
+Tragitto 2
+<div class="horRule"></div>
+Tragitto 3
+<div class="horRule"></div>
+Tragitto 4
+</div>
+
+</body>
+</html>

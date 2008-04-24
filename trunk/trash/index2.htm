@@ -1,0 +1,65 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+  <title>CarPooling</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+  <script>
+  function script2() {
+     var e = document.getElementById("login");
+     if (e.style.visibility == 'visible') {
+         e.style.visibility = 'hidden';
+         e.style.display = 'none';
+     } else {
+         e.style.visibility = 'visible';
+         e.style.display = 'block';
+     }
+ }
+  </script>
+</head>
+
+<body topmargin="0px">
+
+<!-- Logo e Login -->
+<div id="header">
+  <img id="logo" src="logo.png" />
+    <form id="login">
+      <label class="ciao">Username<br />
+      <input text="prova" class="login" tabindex="1">
+      </label><br />
+      <label class="ciao">Password<br /><input text="Password" class="login" tabindex="2"></label>
+      <br /><button type="send" name="invia" class="login">Invia</button>
+    </form>
+</div>
+
+<!-- Barra dei menu -->
+<div id="menu">
+<!--
+  Menu  alternativo (problemi di css)
+  <ul>
+    <li><a href="#" onclick="script2()">Login</a></li>
+    <li>&middot;&nbsp;<a href="#">Cerca corsa</a></li>
+  </ul>
+  -->
+  <a href="#" onclick="script2()">Login</a>&nbsp;&middot;
+  <a href="#">Iscriviti</a>&nbsp;&middot;
+  <a href="#">Cerca tragitto</a>&nbsp;&middot;
+  <a href="#">Lista utenti</a>
+</div>
+
+<div id="body">
+Tragitto 1
+<div class="horRule"></div>
+Tragitto 2
+<div class="horRule"></div>
+Tragitto 3
+<div class="horRule"></div>
+Tragitto 4
+</div>
+
+</body>
+</html>
